@@ -193,7 +193,7 @@ public class Main {
 
         System.out.println("Index of element: " + op.containsInt(array2, 92));
         System.out.println("-------------------------------------");
-        char[] character = {'-', ' '};
+        char[] character = {'-'};
 
         op.drawLines(character);
         System.out.println("-------------------------------------");

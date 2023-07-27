@@ -1,4 +1,10 @@
 public class LogicalOp {
+
+    /* 3.3 In clasa LogicalOp, creati o metoda de tip int, care sa se numeasca checkBiggerNumber()
+    si sa primeasca doua int-uri ca si parametrii. Folosind if - else,
+    verificati in interiorul metode care numar este mai mare,
+    dintre cele doua valori care va vin ca si parametrii, si returnati numarul mai mare.
+     */
     public int checkBiggerNumber(int number1, int number2) {
         if (number1 > number2)
             return number1;
@@ -6,24 +12,49 @@ public class LogicalOp {
             return number2;
     }
 
+    /* 3.4 Creati o metoda de tip String, care sa primeasca un parametru de tip String.
+    Verificati daca textul ce vine ca si parametru este egal cu “Evozon”.
+    Daca da, atunci metoda sa returneze “Learning text comparison”.
+    Daca nu, atunci metoda sa returneze “Got to try some more”.
+     */
     public String textEquals(String text) {
         if (text.equals("Evozon"))
             return "Learning text comparison";
         return "Got to try some more";
     }
 
+    /* 3.5 Creati o metoda de tip String, care sa primeasca un parametru de tip String,
+     si un parametru de tip int. Daca textul primit ca si parametru este egal cu “Evozon”,
+     si numarul primit ca si parametru este mai mic sau egal cu 3, returnati textul si numarul,
+      in ordinea asta. Daca textul nu este “Evozon” si numarul este mai mare sau egal cu 4,
+      returnati numarul si textul, in ordinea asta.
+      Apelati metoda in main() pentru a verifica daca functioneaza.
+     */
     public String textEqualsAndIntLess(String text, int number) {
         if (text.equals("Evozon") && number <= 3)
             return "Evozon " + number;
         return number + " " + text;
     }
 
+    /* 3.6 Creati o metoda de tip String, care sa primeasca un parametru de tip int.
+       Daca numarul primit este mai mare de 8, SAU egal cu 6, atunci sa se returneze
+       “The amount of snow this winter was(cm): “ si numarul. Daca nu, sa returneze
+       “The forecast snow is(cm):” si numarul. Apelati metoda in main() pentru a verifica
+       daca functioneaza.
+     */
     public String intCompare(int number) {
         if (number > 8 || number == 6)
             return "The amount of snow this winter was(cm): " + number;
         return "The forecast snow is(cm):" + number;
     }
 
+    /* 3.7 Creati o metoda de tip String, care sa primeasca un parametru de tip numar.
+    Daca numarul e mai mare decat 3, SI nu egal cu 4, returnati
+    “The number is greater than 3 and not equal to 4”. D
+    aca numarul este egal cu 4, returnati “The number is equal to 4”,
+    iar daca numarul este mai mic de 3 returnati “The number is lower than 3”.
+    Apelati metoda in main() pentru a verifica daca functioneaza.
+     */
     public String numberCompare(double number) {
         if (number > 3 && number != 4)
             return "The number is greater than 3 and not equal to 4 ";
@@ -34,6 +65,13 @@ public class LogicalOp {
         return "The number is 3";
     }
 
+    /* 3.8 Creati o metoda care primeste un numar ca si parametru si sa afiseze ce numar a primit.
+     Folosind constructia Switch-Case, verificati ce numar s-a primit si afisati textul
+     "The number is:  x !" unde x trebuie sa reprezinte numarul apasat.
+     Pentru exemplul de fata sa nu se foloseasca concatenarea stringului
+     "The number is:" cu numarul de la parametru, ci sa se scrie intreg textul cu
+     tot cu numar pentru fiecare caz din Switch-Case. Apelati metoda in main() pentru a
+     verifica daca functioneaza. */
     public void numberReceiver(int number) {
         switch (number) {
             case 1 -> System.out.println("The number is: 1!");
@@ -49,14 +87,28 @@ public class LogicalOp {
         }
     }
 
+    /* 3.9 Creati o metoda care sa se numeasca isNumberEven. Metoda trebuie sa primeasca ca
+    parametru un numar, si sa returneze adevarat sau fals.
+    Daca numarul e par sa returneze true iar daca e impar sa returnese false.
+    Apelati metoda in main() pentru a verifica daca functioneaza.
+     */
     public boolean isNumberEven(int number) {
         return number % 2 == 0;
     }
 
+    /* 3.10 Creati o metoda care sa se numeasca isEligibleToVote. Metoda sa primeasca ca si parametru
+     un numar, care sa reprezinte varsta, iar metoda sa iti zica daca daca persoana are drept de vot.
+     Daca varsta e peste 18, sa se returneze true iar daca nu, sa returneze false.
+     Apelati metoda in main() pentru a verifica daca functioneaza.
+     */
     public boolean isEligibleToVote(int age) {
         return age >= 18;
     }
 
+
+    /* 3.11 Creati o metoda care sa primeasca 3 numere ca si parametrii si sa returneze cel mai
+     mare numar. Apelati metoda in main() pentru a verifica daca functioneaza.
+     */
     public int biggestOfThree(int number1, int number2, int number3) {
         if (number1 >= number2 && number1 >= number3)
             return number1;
@@ -65,28 +117,45 @@ public class LogicalOp {
         return number3;
     }
 
-    // 4.1
+    /* 4.1 Creati o metoda in clasa LogicalOp, care sa primeasca un numar ca si parametru.
+    Metoda sa verifice numarul primit, si sa afiseze in consola o numaratoare pana la 100,
+    pornind de la numarul primit ca si parametru. Atentie la crearea tipului metodei,
+    deoarece metoda afiseaza, nu returneaza.
+     */
     public void countUpFrom(int number) {
         for (int i = number; i <= 100; i++) {
             System.out.println(i);
         }
     }
 
-    // 4.2
+    /* 4.2 Creati o metoda in clasa LogicalOp, care sa primeasca un numar ca si parametru.
+    Metoda sa verifice numrul primit, si sa afiseze in consola o numaratoare pana la -100,
+    pornind de la numarul primit ca si parametru. Atentie la crearea tipului metodei,
+    deoarece metoda afiseaza, nu returneaza.
+     */
     public void countDownFrom(int number) {
         for (int i = number; i >= -100; i--) {
             System.out.println(i);
         }
     }
 
-    // 4.3
+    /* 4.3 Creati o metoda in clasa LogicalOp, care sa primeasca doi parametrii de tip numar.
+    Metoda sa afiseze o numaratoare intre cele doua numere primite, pornind de la primul parametru primit,
+    pana la cel de-al doilea(ex: daca int xe primul parametru iar int y  este cel de-al doilea,
+    numaratoarea sa se faca de la x, la y.
+     */
     public void countInRange(int number1, int number2) {
         for (int i = number1; i <= number2; i++) {
             System.out.println(i);
         }
     }
 
-    // 4.4
+    /* 4.4  Creati o metoda in clasa LogicalOp, care sa primeasca doi parametrii de tip numar.
+    Metoda trebuie sa verifice care dintre cele doua numere este mai mare, si sa execute o
+    numaratoare crescatoare de la cel mai mic la cel mai mare.(ex: daca int x e primul parametru
+    iar int y  este cel de-al doilea, daca x  este mai mare decat y,  atunci numaratoarea sa fie
+    de la y la x).
+     */
     public void countInRangeComparison(int number1, int number2) {
         if (number2 < number1) {
             int t = number2;
@@ -98,21 +167,25 @@ public class LogicalOp {
         }
     }
 
-    //4.5
+    /* 4.5 Creati o metoda in clasa LogicalOp care sa afiseze toate numerele pare de la 1 la 100. */
     public void evenNumbers() {
         for (int i = 2; i <= 100; i = i + 2) {
             System.out.println(i);
         }
     }
 
-    //4.6
+    //4.6 Creati o metoda in clasa LogicalOp care sa afiseze toate numerele impare de la 1 la 100.
     public void oddNumbers() {
         for (int i = 1; i <= 100; i = i + 2) {
             System.out.println(i);
         }
     }
 
-    //4.7
+    /* 4.7 Creati o metoda in clasa LogicalOp care sa primeasca un parametru de tip numar.
+     Metoda sa adune toate numerele pana la 100, pornind de la numarul primit ca si parametru,
+     iar la final sa returneze rezultatul. Apelati metoda in clasa Main, metoda main() pentru
+     a verifica daca functioneaza.
+     */
     public int sumNumbers(int number) {
         int sum = 0;
         for (int i = number; i <= 100; i++) {
@@ -122,7 +195,11 @@ public class LogicalOp {
 
     }
 
-    //4.8
+    /* 4.8 Creati o metoda in clasa LogicalOp care sa primeasca un parametru de tip numar.
+    Metoda sa adune toate numerele pana la 100, pornind de la numarul primit ca si parametru,
+    si sa calculeze media numerelor. La final, metoda sa returneze media.
+    Apelati metoda in clasa Main, metoda main() pentru a verifica daca functioneaza.
+     */
     public double averageNumbers(int number) {
         int sum = 0;
         int count = 0;
@@ -134,7 +211,14 @@ public class LogicalOp {
 
     }
 
-    // 4.9
+    /* 4.9 Creat o metoda in clasa LogicalOp care sa afiseze urmatorul tipar:
+     *******
+     ******
+     *****
+     ****
+     ***
+     **
+     * */
     public void doDrawing(int size) {
         for (int i = 0; i < size; i++) {
             System.out.println();
@@ -393,9 +477,6 @@ public class LogicalOp {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++)
                 System.out.print(characters[0]);
-            System.out.println();
-            for (int j = 0; j < 10; j++)
-                System.out.print(characters[1]);
             System.out.println();
         }
     }
