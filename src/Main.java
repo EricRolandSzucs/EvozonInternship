@@ -5,25 +5,6 @@ public class Main {
         System.out.println("Hello\nEric");
     }
 
-    // 1.2. Printati rezultatul sumei a doua numere(orice numere)
-    public static double add(double number1, double number2) {
-        return number1 + number2;
-    }
-
-    // 1.3. Printati rezultatul impartirii a doua numere. Atentie, daca numarul nu este intreg, sa afiseze si valorile dupa virgula.
-    public static double divide(double number1, double number2) {
-        return number1 / number2;
-    }
-
-    // 2.2 Scrieti care o metoda java pentru fiecare din urmatoarele operatii matematice: adunare, scadere, inmultire, impartire.
-    public static double multiply(double number1, double number2) {
-        return number1 * number2;
-    }
-
-    public static double subtract(double number1, double number2) {
-        return number1 - number2;
-    }
-
     // 1.4. Printati rezultatul urmatoarelor operatiuni:
     public static void operationResults() {
         // a. -5 + 8 * 6
@@ -56,16 +37,6 @@ public class Main {
                  +-----+\s""".indent(20));
     }
 
-    // 2.4.Scrieti o metoda java, care sa primeasca 3 parametrii de tip numar, si sa returneze media numerelor.
-    public static double average(double number1, double number2, double number3) {
-        return (number1 + number2 + number3) / 3;
-    }
-
-    // 2.5.Scrieti o metoda java, care sa returneze restul impartirii a doua numere
-    public static double remainder(double number1, double number2) {
-        return number1 % number2;
-    }
-
     // 2.6.Scrieti o metoda java, care sa primeasca ca si parametru un numar, care sa reprezinte temperatura in Fahrenheit, si sa returneze temperatura in Celsius. Formula de calcul este: C = 5/9 * (F -32)
     public static double conversionToCelsius(double fahrenheit) {
         return (double) 5 / 9 * (fahrenheit - 32);
@@ -92,22 +63,27 @@ public class Main {
     public static void main(String[] args) {
         greeting();
 
-        System.out.println("Addition: " + add(3.14, 4));
+        // Calculator operations:
+        Calculator c = new Calculator();
 
-        System.out.println("Division: " + divide(10, 3));
+        System.out.println("Addition: " + c.add(3.14, 4));
 
-        System.out.println("Subtraction: " + subtract(3.14, 4));
+        System.out.println("Division: " + c.divide(10, 3));
 
-        System.out.println("Multiplication: " + multiply(10, 3));
+        System.out.println("Subtraction: " + c.subtract(3.14, 4));
+
+        System.out.println("Multiplication: " + c.multiply(10, 3));
 
         System.out.println("Operation results: ");
+
+        // Assignment 1+2:
         operationResults();
 
         displayFrankenstein();
 
-        System.out.println("Average: " + average(1, 2, 3));
+        System.out.println("Average: " + c.average(1, 2, 3));
 
-        System.out.println("Remainder: " + remainder(4, 2));
+        System.out.println("Remainder: " + c.remainder(4, 2));
 
         System.out.println("Converted to celsius: " + conversionToCelsius(100) + "C");
 
@@ -116,6 +92,31 @@ public class Main {
         conversionToSpeed(1500, 1, 0, 0);
 
         circle(2.3);
+
+        // Assignment 3:
+
+        LogicalOp op = new LogicalOp();
+
+        int biggest = op.checkBiggerNumber(2, 3);
+
+        System.out.println("The bigger number is: " + biggest);
+
+        System.out.println(op.textEquals("Evozon"));
+
+        System.out.println(op.textEqualsAndIntLess("NotEvozon", 3));
+
+        System.out.println(op.intCompare(6));
+
+        System.out.println(op.numberCompare(3.2));
+        
+        op.numberReceiver(9);
+
+        System.out.println(op.isNumberEven(2));
+
+        System.out.println(op.isEligibleToVote(18));
+
+        System.out.println(op.biggestOfThree(2, 2, 3));
+
     }
 
 
