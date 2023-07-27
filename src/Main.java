@@ -133,6 +133,21 @@ public class Main {
 
         op.doDrawing(7);
 
+        // Assignment 5 - while loops
+
+        op.countUpFromWhile(97);
+
+        op.countDownFromWhile(-97);
+
+        op.countInRangeWhile(97, 100);
+
+        op.countInRangeComparisonWhile(100, 97);
+
+        op.sumAndAverage(111, 8899);
+
+        op.averageDivisibleBySeven(10, 22);
+
+        op.CozaLozaWoza();
     }
 
 
