@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     // 1.1.Printati "Hello" in consola, iar pe rand nou, printati numele vostru.
@@ -196,21 +199,52 @@ public class Main {
         System.out.println("-------------------------------------");
         System.out.println();
         int[] array7 = op.removeElement(array2, 2);
-        for (int i = 0; i < array7.length; i++)
-            System.out.println(array7[i]);
+        for (int j : array7) System.out.println(j);
 
         System.out.println("-------------------------------------");
         int[] array5 = {5, 2, 3, 4};
         System.out.println(op.secondSmallest(array5));
-        
+
         System.out.println("-------------------------------------");
         int[] array6 = new int[4];
         op.copyMethod(array5, array6);
 
-        for (int i = 0; i < array6.length; i++) {
-            System.out.println(array6[i]);
+        for (int j : array6) {
+            System.out.println(j);
         }
         System.out.println("-------------------------------------");
+
+        // Assignment 7 - lists
+        Lists l = new Lists();
+        List<String> list = new ArrayList<>();
+        list.add("Hey");
+        list.add("Now");
+        list.add("Rockstar");
+
+        l.displayList(list);
+        System.out.println("-------------------------------------");
+        List<Integer> list3 = new ArrayList<>() {{
+            add(20);
+            add(30);
+            add(40);
+        }};
+
+        l.addNumber(list3, 50);
+        l.displayList(list3);
+        System.out.println("-------------------------------------");
+        l.displayInRange(list3, 2);
+        System.out.println("-------------------------------------");
+        l.displayInReverse(list3);
+        System.out.println("-------------------------------------");
+        l.addAtPosition(list, 2, "RAWR");
+        l.displayList(list);
+        System.out.println("-------------------------------------");
+        l.addAtBeginning(list, "DINOSAUR");
+        l.displayList(list);
+        System.out.println("-------------------------------------");
+        l.displayPosition(list);
+        System.out.println("-------------------------------------");
+        System.out.println(l.biggestNumber(list3));
     }
 
 
