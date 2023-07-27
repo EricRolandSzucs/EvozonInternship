@@ -65,4 +65,83 @@ public class LogicalOp {
         return number3;
     }
 
+    // 4.1
+    public void countUpFrom(int number) {
+        for (int i = number; i <= 100; i++) {
+            System.out.println(i);
+        }
+    }
+
+    // 4.2
+    public void countDownFrom(int number) {
+        for (int i = number; i >= -100; i--) {
+            System.out.println(i);
+        }
+    }
+
+    // 4.3
+    public void countInRange(int number1, int number2) {
+        for (int i = number1; i <= number2; i++) {
+            System.out.println(i);
+        }
+    }
+
+    // 4.4
+    public void countInRangeComparison(int number1, int number2) {
+        if (number2 < number1) {
+            int t = number2;
+            number2 = number1;
+            number1 = t;
+        }
+        for (int i = number1; i <= number2; i++) {
+            System.out.println(i);
+        }
+    }
+
+    //4.5
+    public void evenNumbers() {
+        for (int i = 2; i <= 100; i = i + 2) {
+            System.out.println(i);
+        }
+    }
+
+    //4.6
+    public void oddNumbers() {
+        for (int i = 1; i <= 100; i = i + 2) {
+            System.out.println(i);
+        }
+    }
+
+    //4.7
+    public int sumNumbers(int number) {
+        int sum = 0;
+        for (int i = number; i <= 100; i++) {
+            sum = sum + i;
+        }
+        return sum;
+
+    }
+
+    //4.8
+    public double averageNumbers(int number) {
+        int sum = 0;
+        int count = 0;
+        for (int i = number; i <= 100; i++) {
+            sum = sum + i;
+            count++;
+        }
+        return (double) sum / count;
+
+    }
+
+    // 4.9
+    public void doDrawing(int size) {
+        for (int i = 0; i < size; i++) {
+            System.out.println();
+            for (int j = i; j < size; j++) {
+                System.out.print('*');
+            }
+        }
+    }
+
 }

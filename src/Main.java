@@ -93,7 +93,7 @@ public class Main {
 
         circle(2.3);
 
-        // Assignment 3:
+        // Assignment 3 - if-else:
 
         LogicalOp op = new LogicalOp();
 
@@ -108,7 +108,7 @@ public class Main {
         System.out.println(op.intCompare(6));
 
         System.out.println(op.numberCompare(3.2));
-        
+
         op.numberReceiver(9);
 
         System.out.println(op.isNumberEven(2));
@@ -116,6 +116,22 @@ public class Main {
         System.out.println(op.isEligibleToVote(18));
 
         System.out.println(op.biggestOfThree(2, 2, 3));
+
+        // Assignment 4 - for loops
+
+        op.countUpFrom(97);
+
+        op.countDownFrom(-97);
+
+        op.countInRange(90, 93);
+
+        op.countInRangeComparison(93, 90);
+
+        System.out.println(op.sumNumbers(99));
+
+        System.out.println(op.averageNumbers(98));
+
+        op.doDrawing(7);
 
     }
 
