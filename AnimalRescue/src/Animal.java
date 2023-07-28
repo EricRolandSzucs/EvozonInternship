@@ -1,6 +1,7 @@
-public class Animal {
+abstract public class Animal {
     private String name;
     private int age;
+    private int weight;
     // 1 - 10
     private int healthLevel;
     // 1 - 10
@@ -10,16 +11,24 @@ public class Animal {
 
     private PetFood food;
     private Activity favoriteActivity;
+    private boolean sleeping;
 
-    public Animal(String name, int age, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity) {
+    public Animal(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity) {
         this.name = name;
         this.age = age;
+        this.weight = weight;
         this.healthLevel = healthLevel;
         this.hungerLevel = hungerLevel;
         this.mood = mood;
         this.food = food;
         this.favoriteActivity = favoriteActivity;
     }
+
+    abstract public void sleep();
+
+    abstract public void eat(PetFood food);
+
+    abstract public void speak();
 
     public String getName() {
         return name;
@@ -75,5 +84,21 @@ public class Animal {
 
     public void setFavoriteActivity(Activity favoriteActivity) {
         this.favoriteActivity = favoriteActivity;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public boolean isSleeping() {
+        return sleeping;
+    }
+
+    public void setSleeping(boolean sleeping) {
+        this.sleeping = sleeping;
     }
 }

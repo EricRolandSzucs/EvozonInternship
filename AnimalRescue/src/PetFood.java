@@ -1,17 +1,18 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class PetFood {
+abstract public class PetFood {
     private String name;
     private double price;
     private int quantity;
     private LocalDateTime expiryDate;
     private int availability;
 
-    public PetFood(String name, double price, int quantity, LocalDateTime expiryDate, int availability) {
+    public PetFood(String name, double price, int quantity, String expiryDate, int availability) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.expiryDate = expiryDate;
+        this.expiryDate = LocalDateTime.parse(expiryDate, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
         this.availability = availability;
     }
 
