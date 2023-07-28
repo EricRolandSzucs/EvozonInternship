@@ -6,6 +6,6 @@ public class Student extends Adopter{
     }
 
     public void doHomework() {
-        System.out.println("Girl: This homework is so much fun");
+        System.out.println('\n' + this.getName() + " is doing homework");
     }
 }

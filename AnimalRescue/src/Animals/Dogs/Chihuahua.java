@@ -8,8 +8,8 @@ public class Chihuahua extends Dog {
     public int barkLoudness;
     public int annoyingness;
 
-    public Chihuahua(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity, String breed) {
-        super(name, age, weight, healthLevel, hungerLevel, mood, food, favoriteActivity, breed);
+    public Chihuahua(String name, int age, int weight, int healthLevel, int hungerLevel, int mood,int fear, PetFood food, Activity favoriteActivity, String breed) {
+        super(name, age, weight, healthLevel, hungerLevel, mood, fear, food, favoriteActivity, breed);
     }
 
     @Override
@@ -22,8 +22,8 @@ public class Chihuahua extends Dog {
     @Override
     public void eat(PetFood food) {
         if(this.getHungerLevel() != 20) {
-            System.out.println("Dog: This " + food.getName() + " " + food.getType() + " is okay");
-            this.setHungerLevel(this.getHungerLevel() + 1);
+            System.out.println(this.getName() + " is eating\n" + this.getName() + ": This " + food.getName() + " " + food.getType() + " is okay");
+            this.setHungerLevel(this.getHungerLevel() + food.getHunger());
         } else
             System.out.println("Dog: No more");
 

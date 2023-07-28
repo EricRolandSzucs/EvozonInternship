@@ -11,9 +11,8 @@ public class PetFood {
     private int availability;
     private String type;
     private int hunger;
-    private int weight;
 
-    public PetFood(String name, double price, int quantity, String expiryDate, int availability,String type, int hunger, int weight) {
+    public PetFood(String name, double price, int quantity, String expiryDate, int availability,String type, int hunger) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -21,7 +20,6 @@ public class PetFood {
         this.availability = availability;
         this.type = type;
         this.hunger = hunger;
-        this.weight = weight;
     }
 
     public String getName() {
@@ -78,13 +76,5 @@ public class PetFood {
 
     public void setHunger(int hunger) {
         this.hunger = hunger;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 }

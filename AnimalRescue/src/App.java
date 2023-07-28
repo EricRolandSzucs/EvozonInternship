@@ -1,5 +1,4 @@
 import Activities.Activity;
-import Animals.Dogs.Dog;
 import Animals.Dogs.LabradorMutt;
 import Persons.Adopter;
 import Persons.Nurse;
@@ -25,10 +24,13 @@ public class App {
         father.setLocation("the Animal shelter");
         girl.setLocation("the Animal shelter");
 
-        PetFood food = new PetFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",50, "For Puppies", 1,5);
+        PetFood food = new PetFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",50, "For Puppies", 1);
         Activity running = new Activity("Running", "Outside");
         Activity walking = new Activity("Walking", "Outside");
-        LabradorMutt dog = new LabradorMutt("Janos", 10, 10, 2, 2,2,food,running, "half breed labrador");
+
+        // "Cainele, era foarte nefericit, slab si nu voia sa manance "
+        // -> Implementing this by lowering the relevant stats: healthLevel: 2, hungerLevel: 2, etc.
+        LabradorMutt dog = new LabradorMutt("Janos", 10, 10, 2, 2,2,2,food,running, "half breed labrador");
         dog.setParentRace("Pit-bull");
 
         girl.adopt(dog);
@@ -41,6 +43,10 @@ public class App {
 
         girl.feedPet(dog, food);
 
+        /* Dupa catva timp, catelul, in varsta de cativa ani, a inceput sa ia in greutate,
+        si a inceput sa se simta mai energic.
+        -> Implementing this by lowering the relevant stats and increasing the age
+         */
         dog.setAge(dog.getAge()+4);
         dog.setWeight(dog.getWeight()+10);
         dog.setMood(dog.getMood()+4);
@@ -63,7 +69,6 @@ public class App {
         girl.setLocation("Home");
         food.setType("Wet");
         food.setHunger(2);
-        food.setWeight(10);
 
         girl.feedPet(dog, food);
 
@@ -71,8 +76,8 @@ public class App {
 
         food.setType("Special low calorie food");
         food.setHunger(1);
-        food.setWeight(3);
 
+        // RUTINA
         Activity play = new Activity("Playing with the ball", "In garden");
         for(int i=1;i<5;i++) {
             System.out.println("-------------DAY "+i+":-------------");

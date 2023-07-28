@@ -13,18 +13,21 @@ abstract public class Animal {
     private int hungerLevel;
     // 1 - 20
     private int mood;
+    // 1 - 20
+    private int fear;
 
     private PetFood food;
     private Activity favoriteActivity;
     private boolean sleeping;
 
-    public Animal(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity) {
+    public Animal(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, int fear, PetFood food, Activity favoriteActivity) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.healthLevel = healthLevel;
         this.hungerLevel = hungerLevel;
         this.mood = mood;
+        this.fear = fear;
         this.food = food;
         this.favoriteActivity = favoriteActivity;
     }
@@ -58,7 +61,7 @@ abstract public class Animal {
 
     public void setHealthLevel(int healthLevel) {
 
-        this.healthLevel = healthLevel;
+        this.healthLevel = Math.min(healthLevel, 20);
         System.out.println(this.getName() + " health level: " + this.getHealthLevel());
     }
 
@@ -67,7 +70,7 @@ abstract public class Animal {
     }
 
     public void setHungerLevel(int hungerLevel) {
-        this.hungerLevel = hungerLevel;
+        this.hungerLevel = Math.min(hungerLevel, 20);
         System.out.println(this.getName() + " hunger level: " + this.getHungerLevel());
     }
 
@@ -76,7 +79,7 @@ abstract public class Animal {
     }
 
     public void setMood(int mood) {
-        this.mood = mood;
+        this.mood = Math.min(mood, 20);
         System.out.println(this.getName() + " mood level: " + this.getMood());
     }
 
@@ -113,4 +116,12 @@ abstract public class Animal {
         this.sleeping = sleeping;
     }
 
+    public int getFear() {
+        return fear;
+    }
+
+    public void setFear(int fear) {
+        this.fear = fear;
+        System.out.println(this.getName() + " fear: " + this.getFear());
+    }
 }

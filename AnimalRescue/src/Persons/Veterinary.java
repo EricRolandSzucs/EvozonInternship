@@ -14,12 +14,14 @@ public class Veterinary extends Person {
         System.out.println('\n' + "Veterinary currently vaccinating " + pet.getName());
         pet.setHealthLevel(pet.getHealthLevel()+1);
         pet.setMood(pet.getMood() - 1);
+        pet.setFear(pet.getFear() - 1);
     }
 
     public void deworm(Animal pet) {
         System.out.println('\n' + "Veterinary currently deworming " + pet.getName());
         pet.setHealthLevel(pet.getHealthLevel()+1);
         pet.setMood(pet.getMood() - 1);
+        pet.setFear(pet.getFear() - 1);
     }
 
     public String getSpecialty() {

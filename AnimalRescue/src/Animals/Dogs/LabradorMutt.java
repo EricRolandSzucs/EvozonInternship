@@ -6,8 +6,8 @@ import PetFoods.PetFood;
 public class LabradorMutt extends Dog {
     public String parentRace;
 
-    public LabradorMutt(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity, String breed) {
-        super(name, age, weight, healthLevel, hungerLevel, mood, food, favoriteActivity, breed);
+    public LabradorMutt(String name, int age, int weight, int healthLevel, int hungerLevel, int mood,int fear, PetFood food, Activity favoriteActivity, String breed) {
+        super(name, age, weight, healthLevel, hungerLevel, mood, fear, food, favoriteActivity, breed);
     }
 
     @Override
@@ -20,8 +20,8 @@ public class LabradorMutt extends Dog {
     @Override
     public void eat(PetFood food) {
         if(this.getHungerLevel() != 20) {
-            System.out.println("Dog: This " + food.getName() + " " + food.getType() + " is perfect");
-            this.setHungerLevel(this.getHungerLevel() + 1);
+            System.out.println(this.getName() + " is eating\n" + this.getName() + ": This " + food.getName() + " " + food.getType() + " is perfect");
+            this.setHungerLevel(this.getHungerLevel() + food.getHunger());
         } else
             System.out.println("Dog: :( too much food");
 
@@ -34,13 +34,14 @@ public class LabradorMutt extends Dog {
 
     @Override
     public String toString() {
-        return "Dog{" +
+        return "LabradorMutt{" +
                 "name='" + this.getName() + '\'' +
                 ", age=" + this.getAge() +
                 ", weight=" + this.getWeight() +
                 ", healthLevel=" + this.getHealthLevel() +
                 ", hungerLevel=" + this.getHungerLevel() +
                 ", mood=" + this.getMood() +
+                ", fear=" + this.getFear() +
                 ", food=" + this.getFood().getName() +
                 ", sleeping=" + this.isSleeping() +
                 ", parent race=" + this.getParentRace() +

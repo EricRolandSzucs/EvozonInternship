@@ -6,8 +6,8 @@ import PetFoods.PetFood;
 public class Cat extends Animal {
     private String breed;
 
-    public Cat(String name, int age, int weight, int healthLevel, int hungerLevel, int mood, PetFood food, Activity favoriteActivity, String breed) {
-        super(name, age, weight, healthLevel, hungerLevel, mood, food, favoriteActivity);
+    public Cat(String name, int age, int weight, int healthLevel, int hungerLevel, int mood,int fear, PetFood food, Activity favoriteActivity, String breed) {
+        super(name, age, weight, healthLevel, hungerLevel, mood,fear, food, favoriteActivity);
         this.breed = breed;
     }
 
