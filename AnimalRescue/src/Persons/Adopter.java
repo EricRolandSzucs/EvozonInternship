@@ -2,6 +2,8 @@ package Persons;
 
 import Activities.Activity;
 import Animals.Animal;
+import Animals.Dogs.Dog;
+import PetFoods.DogFood;
 import PetFoods.PetFood;
 
 public class Adopter extends Person {
@@ -29,7 +31,7 @@ public class Adopter extends Person {
         System.out.println(pet.toString());
     }
 
-    public void feedPet(Animal pet, PetFood food) {
+    public void feedDog(Dog pet, DogFood food) {
         System.out.println(this.getName() + " is feeding " + pet.getName());
         pet.eat(food);
         System.out.println(pet.toString());

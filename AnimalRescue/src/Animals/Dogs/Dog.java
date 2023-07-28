@@ -2,6 +2,7 @@ package Animals.Dogs;
 
 import Activities.Activity;
 import Animals.Animal;
+import PetFoods.DogFood;
 import PetFoods.PetFood;
 
 public class Dog extends Animal {
@@ -18,7 +19,7 @@ public class Dog extends Animal {
         this.setSleeping(true);
     }
 
-    public void eat(PetFood food) {
+    public void eat(DogFood food) {
         if(this.getHungerLevel() != 10) {
             System.out.println(this.getName() + " is eating\n" + this.getName() + ": Yum this " + food.getName() + " " + food.getType() + " is delicious");
             this.setHungerLevel(this.getHungerLevel() + food.getHunger());

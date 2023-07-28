@@ -12,14 +12,12 @@ public class PetFood {
     private String type;
     private int hunger;
 
-    public PetFood(String name, double price, int quantity, String expiryDate, int availability,String type, int hunger) {
+    public PetFood(String name, double price, int quantity, String expiryDate, int availability) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.expiryDate = LocalDateTime.parse(expiryDate, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
         this.availability = availability;
-        this.type = type;
-        this.hunger = hunger;
     }
 
     public String getName() {

@@ -34,8 +34,6 @@ abstract public class Animal {
 
     abstract public void sleep();
 
-    abstract public void eat(PetFood food);
-
     abstract public void speak();
 
     public String getName() {

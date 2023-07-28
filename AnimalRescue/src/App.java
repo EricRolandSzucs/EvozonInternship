@@ -4,6 +4,7 @@ import Persons.Adopter;
 import Persons.Nurse;
 import Persons.Student;
 import Persons.Veterinary;
+import PetFoods.DogFood;
 import PetFoods.PetFood;
 
 public class App {
@@ -24,7 +25,7 @@ public class App {
         father.setLocation("the Animal shelter");
         girl.setLocation("the Animal shelter");
 
-        PetFood food = new PetFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",50, "For Puppies", 1);
+        DogFood food = new DogFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",50, "For Puppies", 1);
         Activity running = new Activity("Running", "Outside");
         Activity walking = new Activity("Walking", "Outside");
 
@@ -41,7 +42,7 @@ public class App {
         girl.setLocation("Home");
         father.setLocation("Home");
 
-        girl.feedPet(dog, food);
+        girl.feedDog(dog, food);
 
         /* Dupa catva timp, catelul, in varsta de cativa ani, a inceput sa ia in greutate,
         si a inceput sa se simta mai energic.
@@ -70,7 +71,7 @@ public class App {
         food.setType("Wet");
         food.setHunger(2);
 
-        girl.feedPet(dog, food);
+        girl.feedDog(dog, food);
 
         dog.setWeight(dog.getWeight()+2);
 
@@ -81,14 +82,14 @@ public class App {
         Activity play = new Activity("Playing with the ball", "In garden");
         for(int i=1;i<5;i++) {
             System.out.println("-------------DAY "+i+":-------------");
-            girl.feedPet(dog, food);
+            girl.feedDog(dog, food);
             girl.playWithPet(dog, walking);
             dog.sleep();
             girl.doHomework();
             dog.setSleeping(false);
 
             girl.playWithPet(dog, play);
-            girl.feedPet(dog, food);
+            girl.feedDog(dog, food);
             dog.sleep();
         }
 

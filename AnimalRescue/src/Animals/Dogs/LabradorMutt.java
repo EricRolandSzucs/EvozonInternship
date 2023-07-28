@@ -1,6 +1,7 @@
 package Animals.Dogs;
 
 import Activities.Activity;
+import PetFoods.DogFood;
 import PetFoods.PetFood;
 
 public class LabradorMutt extends Dog {
@@ -18,7 +19,7 @@ public class LabradorMutt extends Dog {
     }
 
     @Override
-    public void eat(PetFood food) {
+    public void eat(DogFood food) {
         if(this.getHungerLevel() != 20) {
             System.out.println(this.getName() + " is eating\n" + this.getName() + ": This " + food.getName() + " " + food.getType() + " is perfect");
             this.setHungerLevel(this.getHungerLevel() + food.getHunger());
