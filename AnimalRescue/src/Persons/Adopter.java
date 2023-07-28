@@ -1,3 +1,9 @@
+package Persons;
+
+import Activities.Activity;
+import Animals.Animal;
+import PetFoods.PetFood;
+
 public class Adopter extends Person {
     private double availableMoney;
     private Animal pet;
@@ -9,26 +15,31 @@ public class Adopter extends Person {
 
     public void adopt(Animal pet) {
         this.pet = pet;
-        System.out.println(this.getName() + ": I own you now!");
+        System.out.println(this.getName() + " adopts an animal.");
+    }
+
+    public void payAdoptionFee(double cost) {
+        availableMoney = availableMoney - cost;
+        System.out.println(this.getName() + " pays the adoption fee." + '\n');
     }
 
     public void changePetName(Animal pet, String name) {
+        System.out.println(this.getName() + " changed the name of " + pet.getName() + " to " + name);
         pet.setName(name);
+        System.out.println(pet.toString());
     }
 
     public void feedPet(Animal pet, PetFood food) {
+        System.out.println(this.getName() + " is feeding " + pet.getName());
         pet.eat(food);
-        pet.setHungerLevel(pet.getHungerLevel()+1);
+        System.out.println(pet.toString());
     }
 
     public void playWithPet(Animal pet, Activity activity) {
+        System.out.println('\n' + this.getName() + " is doing the activity: " + activity.getName() + " with " + pet.getName());
         pet.setHealthLevel(pet.getHealthLevel()+1);
         pet.setMood(pet.getMood()+1);
-    }
-
-    public void walkPet(Animal pet) {
-        pet.setHealthLevel(pet.getHealthLevel()+1);
-        pet.setMood(pet.getMood()+1);
+        System.out.println();
     }
 
     public double getAvailableMoney() {
@@ -42,4 +53,5 @@ public class Adopter extends Person {
     public Animal getPet() {
         return pet;
     }
+
 }

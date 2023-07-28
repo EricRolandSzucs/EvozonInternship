@@ -1,12 +1,17 @@
+package Animals;
+
+import Activities.Activity;
+import PetFoods.PetFood;
+
 abstract public class Animal {
     private String name;
     private int age;
     private int weight;
-    // 1 - 10
+    // 1 - 20
     private int healthLevel;
-    // 1 - 10
+    // 1 - 20
     private int hungerLevel;
-    // 1 - 10
+    // 1 - 20
     private int mood;
 
     private PetFood food;
@@ -44,6 +49,7 @@ abstract public class Animal {
 
     public void setAge(int age) {
         this.age = age;
+        System.out.println(this.getName() + " age: " + this.getAge());
     }
 
     public int getHealthLevel() {
@@ -51,7 +57,9 @@ abstract public class Animal {
     }
 
     public void setHealthLevel(int healthLevel) {
+
         this.healthLevel = healthLevel;
+        System.out.println(this.getName() + " health level: " + this.getHealthLevel());
     }
 
     public int getHungerLevel() {
@@ -60,6 +68,7 @@ abstract public class Animal {
 
     public void setHungerLevel(int hungerLevel) {
         this.hungerLevel = hungerLevel;
+        System.out.println(this.getName() + " hunger level: " + this.getHungerLevel());
     }
 
     public int getMood() {
@@ -68,6 +77,7 @@ abstract public class Animal {
 
     public void setMood(int mood) {
         this.mood = mood;
+        System.out.println(this.getName() + " mood level: " + this.getMood());
     }
 
     public PetFood getFood() {
@@ -92,6 +102,7 @@ abstract public class Animal {
 
     public void setWeight(int weight) {
         this.weight = weight;
+        System.out.println(this.getName() + " weight: " + this.getWeight());
     }
 
     public boolean isSleeping() {
@@ -101,4 +112,5 @@ abstract public class Animal {
     public void setSleeping(boolean sleeping) {
         this.sleeping = sleeping;
     }
+
 }

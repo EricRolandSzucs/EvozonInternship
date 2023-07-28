@@ -1,3 +1,7 @@
+package Persons;
+
+import Animals.Animal;
+
 public class Veterinary extends Person {
     private String specialty;
 
@@ -7,11 +11,13 @@ public class Veterinary extends Person {
     }
 
     public void vaccinate(Animal pet) {
+        System.out.println('\n' + "Veterinary currently vaccinating " + pet.getName());
         pet.setHealthLevel(pet.getHealthLevel()+1);
         pet.setMood(pet.getMood() - 1);
     }
 
     public void deworm(Animal pet) {
+        System.out.println('\n' + "Veterinary currently deworming " + pet.getName());
         pet.setHealthLevel(pet.getHealthLevel()+1);
         pet.setMood(pet.getMood() - 1);
     }

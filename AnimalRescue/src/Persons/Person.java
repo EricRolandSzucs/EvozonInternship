@@ -1,3 +1,5 @@
+package Persons;
+
 abstract public class Person {
     private String name;
     private String gender;
@@ -5,6 +7,7 @@ abstract public class Person {
     private String hairColor;
     private String likes;
     private String height;
+    private String location = "Not known";
 
     public Person(String name, String gender) {
         this.name = name;
@@ -57,5 +60,27 @@ abstract public class Person {
 
     public void setHeight(String height) {
         this.height = height;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        System.out.println(name + " is at " + location + '\n');
+        this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", hairColor='" + hairColor + '\'' +
+                ", likes='" + likes + '\'' +
+                ", height='" + height + '\'' +
+                ", location='" + location + '\'' +
+                '}';
     }
 }

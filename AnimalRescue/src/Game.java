@@ -1,3 +1,7 @@
+import Animals.Dogs.Dog;
+import Persons.Adopter;
+import Persons.Veterinary;
+
 public class Game {
     private Adopter adopter;
     private Dog dog;

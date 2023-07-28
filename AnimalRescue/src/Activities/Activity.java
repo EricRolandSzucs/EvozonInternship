@@ -1,3 +1,5 @@
+package Activities;
+
 public class Activity {
     private String name;
     private String location;
