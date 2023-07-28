@@ -3,7 +3,7 @@ package PetFoods;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class PetFood {
+abstract public class PetFood {
     private String name;
     private double price;
     private int quantity;
