@@ -5,7 +5,6 @@ import Persons.Nurse;
 import Persons.Student;
 import Persons.Veterinary;
 import PetFoods.DogFood;
-import PetFoods.PetFood;
 
 public class App {
     public static void main(String[] args) {

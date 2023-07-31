@@ -22,9 +22,14 @@ public class Chihuahua extends Dog {
 
     @Override
     public void eat(DogFood food) {
+        if(food.getName().equals(this.getFood().getName())) {
+            System.out.println(this.getName() + ": This is my favorite food :)");
+            this.setMood(this.getMood()+1);
+        }
         if(this.getHungerLevel() != 20) {
             System.out.println(this.getName() + " is eating\n" + this.getName() + ": This " + food.getName() + " " + food.getType() + " is okay");
             this.setHungerLevel(this.getHungerLevel() + food.getHunger());
+            this.setWeight(this.getWeight() + 1);
         } else
             System.out.println("Dog: No more");
 

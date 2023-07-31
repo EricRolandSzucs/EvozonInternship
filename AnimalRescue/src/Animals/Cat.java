@@ -18,13 +18,16 @@ public class Cat extends Animal {
     }
 
     public void eat(PetFood food) {
-        System.out.println("Cat: Eh, this: " + food.getName() + " is okay..");
-        if (this.getHungerLevel() != 10) {
-            this.setHungerLevel(this.getHungerLevel() + 1);
-            System.out.println("Hunger level now: " + this.getHungerLevel());
+        if(food.getName().equals(this.getFood().getName())) {
+            System.out.println(this.getName() + ": This is my favorite food :)");
+            this.setMood(this.getMood()+1);
+        }
+        if(this.getHungerLevel() != 20) {
+            System.out.println(this.getName() + " is eating\n" + this.getName() + ": This " + food.getName() + " " + food.getType() + " is perfect");
+            this.setHungerLevel(this.getHungerLevel() + food.getHunger());
+            this.setWeight(this.getWeight() + 1);
         } else
-            System.out.println("I'm full but don't let that stop you");
-
+            System.out.println("Cat: Eh, this: " + food.getName() + " is okay..");
     }
 
     public void speak() {
