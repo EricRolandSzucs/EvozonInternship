@@ -73,6 +73,8 @@ abstract public class Person {
 
     @Override
     public String toString() {
+        StringBuilder str = new StringBuilder();
+
         return "Person{" +
                 "name='" + name + '\'' +
                 ", gender='" + gender + '\'' +

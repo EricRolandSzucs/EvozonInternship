@@ -42,6 +42,7 @@ abstract public class PetFood {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+        System.out.println(this.getName() + " quantity: " + quantity);
     }
 
     public LocalDateTime getExpiryDate() {

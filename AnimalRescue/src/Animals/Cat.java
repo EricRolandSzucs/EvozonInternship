@@ -18,7 +18,7 @@ public class Cat extends Animal {
     }
 
     public void eat(PetFood food) {
-        if(food.getName().equals(this.getFood().getName())) {
+        if(food.getName().equals(this.getFood().getName()) && food.getType().equals(this.getFood().getType())) {
             System.out.println(this.getName() + ": This is my favorite food :)");
             this.setMood(this.getMood()+1);
         }
@@ -45,7 +45,16 @@ public class Cat extends Animal {
     @Override
     public String toString() {
         return "Cat{" +
-                "breed='" + breed + '\'' +
-                '}';
+                "name='" + this.getName() + '\'' +
+                ", age=" + this.getAge() +
+                ", weight=" + this.getWeight() +
+                ", healthLevel=" + this.getHealthLevel() +
+                ", hungerLevel=" + this.getHungerLevel() +
+                ", mood=" + this.getMood() +
+                ", fear=" + this.getFear() +
+                ", food=" + this.getFood().getName() +
+                ", sleeping=" + this.isSleeping() +
+                ", breed=" + this.getBreed() +
+                '}' +'\n';
     }
 }

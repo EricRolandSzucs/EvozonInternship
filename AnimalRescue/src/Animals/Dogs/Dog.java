@@ -20,7 +20,7 @@ public class Dog extends Animal {
     }
 
     public void eat(DogFood food) {
-        if(food.getName().equals(this.getFood().getName())) {
+        if(food.getName().equals(this.getFood().getName()) && food.getType().equals(this.getFood().getType())) {
             System.out.println(this.getName() + ": This is my favorite food :)");
             this.setMood(this.getMood()+1);
         }

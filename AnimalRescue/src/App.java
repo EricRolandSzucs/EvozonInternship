@@ -24,7 +24,7 @@ public class App {
         father.setLocation("the Animal shelter");
         girl.setLocation("the Animal shelter");
 
-        DogFood food = new DogFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",50, "For Puppies", 1);
+        DogFood food = new DogFood("Pedigree", 3.14,100,"2024-01-18 00:00:00.0",100, "For Puppies", 1);
         Activity running = new Activity("Running", "Outside");
         Activity walking = new Activity("Walking", "Outside");
 
@@ -67,28 +67,26 @@ public class App {
         veterinary.deworm(dog);
 
         girl.setLocation("Home");
-        food.setType("Wet");
-        food.setHunger(2);
+        DogFood wetfood = new DogFood("Pedigree", 3.14,1000,"2024-01-18 00:00:00.0",100, "Wet", 2);
 
-        girl.feedDog(dog, food);
+        girl.feedDog(dog, wetfood);
 
         dog.setWeight(dog.getWeight()+2);
 
-        food.setType("Special low calorie food");
-        food.setHunger(1);
+        DogFood specialfood = new DogFood("Pedigree", 3.14,250,"2024-01-18 00:00:00.0",250, "Special low calorie food", 1);
 
         // RUTINA
         Activity play = new Activity("Playing with the ball", "In garden");
         for(int i=1;i<5;i++) {
             System.out.println("-------------DAY "+i+":-------------");
-            girl.feedDog(dog, food);
+            girl.feedDog(dog, specialfood);
             girl.playWithPet(dog, walking);
             dog.sleep();
             girl.doHomework();
             dog.setSleeping(false);
 
             girl.playWithPet(dog, play);
-            girl.feedDog(dog, food);
+            girl.feedDog(dog, specialfood);
             dog.sleep();
         }
 

@@ -34,6 +34,7 @@ public class Adopter extends Person {
     public void feedDog(Dog pet, DogFood food) {
         System.out.println(this.getName() + " is feeding " + pet.getName());
         pet.eat(food);
+        food.setQuantity(food.getQuantity()-1);
         System.out.println(pet.toString());
     }
 
