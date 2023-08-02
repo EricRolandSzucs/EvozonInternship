@@ -18,8 +18,11 @@ public class Main {
 //        AddToCartSimpleProductTest addition = new AddToCartSimpleProductTest();
 //        addition.validAddToCartTest();
 
-        ProductSharingTest productShare = new ProductSharingTest();
-        productShare.validShareProductTest();
+//         ApplyCouponTest apply = new ApplyCouponTest();
+//         apply.validCouponApplyTest();
+
+        AddToCartConfigurableProductTest configurableProduct = new AddToCartConfigurableProductTest();
+        configurableProduct.validAddToCartTest();
 
 
 
