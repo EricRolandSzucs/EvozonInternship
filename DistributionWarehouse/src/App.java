@@ -56,7 +56,7 @@ public class App {
                 csv.savePackToCsv("warehouselog.csv", product);
             }
 
-            csv.readWarehouseLogCsv("warehouselog.csv", LocalDate.now());
+            csv.readWarehouseLogCsv("warehouselog.csv", LocalDate.now(), fruits, vegetables, other);
         }
     }
 }
