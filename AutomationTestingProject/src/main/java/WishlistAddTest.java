@@ -22,10 +22,10 @@ public class WishlistAddTest {
         String message = driver.findElement(By.cssSelector("body > div > div > div.main-container.col2-left-layout > div > div.col-main > div.my-account > div.my-wishlist > ul > li > ul > li > span")).getText();
 
         if(message.contains("has been added to your wishlist")) {
-            System.out.println("Wishlist successful!");
+            System.out.println("Wishlist addition successful!");
         }
         else
-            System.err.println("Wishlist unsuccessful :(!");
+            System.err.println("Wishlist addition unsuccessful :(!");
 
         driver.close();
 

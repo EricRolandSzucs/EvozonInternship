@@ -12,14 +12,7 @@ public class AddToCartSimpleProductTest {
 
         driver.get("http://qa1magento.dev.evozon.com/");
         driver.findElement(By.cssSelector("#nav > ol > li.level0.nav-6 > a")).click();
-        List<WebElement> products = driver.findElements(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul > li > div > div.actions > button"));
-
-        for(WebElement product: products) {
-            if(product.getText().equalsIgnoreCase("Add to cart")) {
-                product.click();
-                break;
-            }
-        }
+        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > button")).click();
 
         String message = driver.findElement(By.cssSelector("body > div > div > div.main-container.col1-layout > div > div > div.cart.display-single-price > ul > li > ul > li > span")).getText();
 
