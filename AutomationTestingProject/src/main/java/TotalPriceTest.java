@@ -13,26 +13,28 @@ public class TotalPriceTest {
         driver.manage().window().maximize();
 
         driver.get("http://qa1magento.dev.evozon.com/");
-        driver.findElement(By.cssSelector("#nav > ol > li.level0.nav-6 > a")).click();
+        driver.findElement(By.cssSelector("li.nav-6")).click();
 
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul > li:nth-child(1) > div > div.actions > button")).click();
-        driver.findElement(By.cssSelector("#shopping-cart-table > tfoot > tr > td > button.button2.btn-continue > span > span")).click();
-        driver.findElement(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul > li:nth-child(2) > div > div.actions > button")).click();
+        driver.findElements(By.cssSelector("div.actions button[title='Add to Cart']")).get(0).click();
+        driver.findElement(By.cssSelector("button[title='Continue Shopping']")).click();
+        driver.findElements(By.cssSelector("div.actions button[title='Add to Cart']")).get(1).click();
 
-        List<WebElement> prices = driver.findElements(By.cssSelector("#shopping-cart-table > tbody > tr > td.product-cart-total > span > span"));
+        List<WebElement> prices = driver.findElements(By.cssSelector("td.product-cart-total span.price"));
 
         double total = 0;
         for(WebElement price: prices) {
             total = total + Double.parseDouble(price.getText().substring(1));
         }
 
-        double subtotal = Double.parseDouble(driver.findElement(By.cssSelector("#shopping-cart-totals-table > tbody > tr:nth-child(1) > td:nth-child(2) > span")).getText().substring(1));
+        double subtotal = Double.parseDouble(driver.findElement(By.cssSelector("#shopping-cart-totals-table > tbody > tr:nth-child(1) > td:nth-child(2)")).getText().substring(1));
 
         if(total == subtotal) {
             System.out.println("Totals match!");
         }
         else
             System.out.println("Totals do not match!");
+
+        driver.close();
 
     }
 }

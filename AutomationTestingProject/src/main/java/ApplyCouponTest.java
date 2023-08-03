@@ -12,27 +12,22 @@ public class ApplyCouponTest {
         driver.manage().window().maximize();
 
         driver.get("http://qa1magento.dev.evozon.com/");
-        driver.findElement(By.cssSelector("#nav > ol > li.level0.nav-6 > a")).click();
-        List<WebElement> products = driver.findElements(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul > li > div > div.actions > button"));
+        driver.findElement(By.cssSelector("li.nav-6")).click();
 
-        for (WebElement product : products) {
-            if (product.getText().equalsIgnoreCase("Add to cart")) {
-                product.click();
-                break;
-            }
-        }
-
+        driver.findElements(By.cssSelector("div.actions button[title='Add to Cart']")).get(0).click();
 
         WebElement coupon = driver.findElement(By.id("coupon_code"));
         coupon.sendKeys("TEST12");
         coupon.submit();
 
-        String message = driver.findElement(By.cssSelector("#shopping-cart-totals-table > tbody > tr:nth-child(2) > td:nth-child(1)")).getText();
+        String message = driver.findElement(By.xpath("//td[contains(text(), 'Discount')]")).getText();
 
         if(message.contains("DISCOUNT")) {
             System.out.println("Discount application successful!");
         }
         else
             System.out.println("Discount application unsuccessful!");
+
+        driver.close();
     }
 }

@@ -32,8 +32,5 @@ public class Main {
 
         TotalPriceTest totalPrice = new TotalPriceTest();
         totalPrice.validTotalPriceTest();
-
-
-
     }
 }

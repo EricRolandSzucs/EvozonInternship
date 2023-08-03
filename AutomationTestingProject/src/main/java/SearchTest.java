@@ -11,7 +11,7 @@ public class SearchTest {
         driver.findElement(By.id("search")).sendKeys("Pants");
         driver.findElement(By.id("search")).submit();
 
-        int productNumber = driver.findElements(By.cssSelector("body > div > div > div.main-container.col3-layout > div > div.col-wrapper > div.col-main > div.category-products > ul")).size();
+        int productNumber = driver.findElements(By.cssSelector("div.category-products > ul")).size();
 
         if(productNumber > 0) {
             System.out.println("Search successful");
