@@ -10,56 +10,51 @@ import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utils.Constants;
 
 @RunWith(JUnit4.class)
-public class PasswordChangeTest {
-
-    WebDriver driver;
+public class PasswordChangeTest extends BaseTest {
 
     @Before
-    public void beforeTestMethod() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://qa1magento.dev.evozon.com/");
-
-        driver.findElement(By.cssSelector("a[data-target-element='#header-account'")).click();
-        driver.findElement(By.cssSelector("a[title='Log In']")).click();
-        driver.findElement(By.id("email")).sendKeys("test2@gmail.com");
-        driver.findElement(By.id("pass")).sendKeys("parola123");
-        driver.findElement(By.id("send2")).click();
+    public void beforeTestLogin() {
+        homepage.clickAccountLink();
+        homepage.clickLoginLink();
+        loginPage.setEmailField(Constants.USER_EMAIL);
+        loginPage.setPasswordField(Constants.USER_PASSWORD);
+        loginPage.clickLoginButton();
     }
 
     @Test
     public void validPasswordChangeTest(){
-        driver.findElement(By.cssSelector(".box-content a")).click();
-        driver.findElement(By.id("current_password")).sendKeys("parola123");
-        driver.findElement(By.id("password")).sendKeys("parola124");
-        driver.findElement(By.id("confirmation")).sendKeys("parola124");
-        driver.findElement(By.cssSelector("div.buttons-set button[type='submit']")).click();
+        accountPage.clickChangePasswordLink();
 
-        driver.findElement(By.cssSelector("a[data-target-element='#header-account'")).click();
-        driver.findElement(By.cssSelector("a[title='Log Out']")).click();
+        accountInformationPage.setCurrentPasswordField(Constants.USER_PASSWORD);
+        accountInformationPage.setPasswordField("parola124");
+        accountInformationPage.setConfirmationField("parola124");
 
-        driver.findElement(By.cssSelector("a[data-target-element='#header-account'")).click();
-        driver.findElement(By.cssSelector("a[title='Log In']")).click();
-        driver.findElement(By.id("email")).sendKeys("test2@gmail.com");
-        driver.findElement(By.id("pass")).sendKeys("parola124");
-        driver.findElement(By.id("send2")).click();
+        accountInformationPage.clickPasswordChangeButton();
 
-        String dashboard = driver.findElement(By.cssSelector("div.page-title")).getText();
+        homepage.clickAccountLink();
+        homepage.clickLogoutLink();
 
-        Assert.assertEquals(dashboard, "MY DASHBOARD");
+        homepage.clickAccountLink();
+        homepage.clickLoginLink();
+        loginPage.setEmailField(Constants.USER_EMAIL);
+        loginPage.setPasswordField("parola124");
+        loginPage.clickLoginButton();
+
+        Assert.assertEquals("Hello, " + Constants.USER_NAME + "!", accountPage.getWelcomeText());
 
     }
 
     @After
     public void afterTestMethod() {
-        driver.findElement(By.cssSelector(".box-content a")).click();
-        driver.findElement(By.id("current_password")).sendKeys("parola124");
-        driver.findElement(By.id("password")).sendKeys("parola123");
-        driver.findElement(By.id("confirmation")).sendKeys("parola123");
-        driver.findElement(By.cssSelector("div.buttons-set button[type='submit']")).click();
-        driver.close();
+        accountPage.clickChangePasswordLink();
+
+        accountInformationPage.setCurrentPasswordField("parola124");
+        accountInformationPage.setPasswordField(Constants.USER_PASSWORD);
+        accountInformationPage.setConfirmationField(Constants.USER_PASSWORD);
+
+        accountInformationPage.clickPasswordChangeButton();
     }
 }

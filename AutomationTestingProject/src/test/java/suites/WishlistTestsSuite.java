@@ -1,10 +1,12 @@
+package suites;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import tests.ReviewAddTest;
+import tests.WishlistAddTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    ReviewAddTest.class
+    WishlistAddTest.class
 })
-public class ProductPageTestsSuite {
+public class WishlistTestsSuite {
 }

@@ -1,5 +1,6 @@
 package tests;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -13,35 +14,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(JUnit4.class)
-public class ApplyCouponTest {
-
-    WebDriver driver;
-
-    @Before
-    public void beforeTestMethod() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://qa1magento.dev.evozon.com/");
-    }
+public class ApplyCouponTest extends BaseTest {
 
     @Test
     public void validCouponApplyTest() {
-        driver.findElement(By.cssSelector("li.nav-6")).click();
+        homepage.clickVipCategoryLink();
 
-        driver.findElements(By.cssSelector("div.actions button[title='Add to Cart']")).get(0).click();
+        productGridPage.clickAddToCartButton(0);
 
-        WebElement coupon = driver.findElement(By.id("coupon_code"));
-        coupon.sendKeys("TEST12");
-        coupon.submit();
+        cartPage.setCouponCodeField("TEST12");
+        cartPage.submitCouponCodeField();
 
-        String message = driver.findElement(By.xpath("//td[contains(text(), 'Discount')]")).getText();
-
-        Assert.assertTrue(message.contains("DISCOUNT"));
-    }
-
-    @After
-    public void afterTestMethod() {
-        driver.close();
+        Assert.assertTrue(cartPage.getDiscountText().contains("DISCOUNT"));
     }
 }
