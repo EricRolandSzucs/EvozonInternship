@@ -20,6 +20,15 @@ public class ProductGridPage extends BasePage{
     @FindBy(css = ".odd:first-of-type ol li:first-of-type a")
     private WebElement filteringOptionButton;
 
+    @FindBy(css = ".toolbar-bottom select[title='Sort By'] option:last-of-type")
+    private WebElement sortByPriceOption;
+
+    @FindBy(css = ".category-products .price")
+    protected List<WebElement> priceOfProductsList;
+
+    @FindBy(css = ".toolbar-bottom .sort-by-switcher")
+    private WebElement sortByDirectionButton;
+
     public ProductGridPage(WebDriver driver) {
         super(driver);
     }
@@ -39,4 +48,34 @@ public class ProductGridPage extends BasePage{
     public void setFilteringOptionButton() {
         filteringOptionButton.click();
     }
+
+    public void clickSortByPriceOption() { sortByPriceOption.click(); }
+
+    public boolean priceOfProductsIsAscending() {
+        double previous = -1;
+        for(WebElement price:priceOfProductsList) {
+            double current = Double.parseDouble(price.getText().replaceAll("[^0-9.]", ""));
+            if(current < previous)
+               return false;
+            previous = current;
+        }
+        return true;
+    }
+
+    public boolean priceOfProductsIsDescending() {
+        double previous = Double.parseDouble(priceOfProductsList.get(0).getText().replaceAll("[$,]", ""));
+        for(WebElement price:priceOfProductsList) {
+            double current = Double.parseDouble(price.getText().replaceAll("[^0-9.]", ""));
+            if(current > previous)
+                return false;
+            previous = current;
+        }
+        return true;
+    }
+
+    public void clickSortByDirectionButton() {
+        sortByDirectionButton.click();
+    }
+
+
 }

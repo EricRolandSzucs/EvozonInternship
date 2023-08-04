@@ -1,9 +1,13 @@
 package pages;
 
+import com.github.javafaker.service.FakeValuesService;
+import com.github.javafaker.service.RandomService;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.RandomEmailGenerator;
+
+import java.util.Locale;
 
 public class RegisterPage extends BasePage {
 
@@ -45,8 +49,11 @@ public class RegisterPage extends BasePage {
     }
 
     public void setEmailAddressField() {
-        RandomEmailGenerator rt = new RandomEmailGenerator();
-        emailAddressField.sendKeys(rt.getSaltString());
+        FakeValuesService fakeValuesService = new FakeValuesService(
+                new Locale("en", "US"), new RandomService());
+
+        String email = fakeValuesService.bothify("??????###@gmail.com");
+        emailAddressField.sendKeys(email);
     }
 
     public void setPasswordField(String password) {
