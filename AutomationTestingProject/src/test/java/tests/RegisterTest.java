@@ -1,4 +1,5 @@
 package tests;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,10 +7,10 @@ import org.junit.runners.JUnit4;
 import utils.Constants;
 
 @RunWith(JUnit4.class)
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest {
 
     @Test
-    public void validRegisterTest(){
+    public void validRegisterTest() {
         homepage.clickAccountLink();
         homepage.clickRegisterLink();
 

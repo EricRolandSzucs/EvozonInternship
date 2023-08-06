@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
-    @FindBy(id ="email")
+    @FindBy(id = "email")
     private WebElement emailField;
 
     @FindBy(id = "pass")
@@ -22,19 +22,19 @@ public class LoginPage extends BasePage{
         super(driver);
     }
 
-    public void setEmailField(String email){
+    public void setEmailField(String email) {
         emailField.sendKeys(email);
     }
 
-    public void setPasswordField(String password){
+    public void setPasswordField(String password) {
         passwordField.sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         loginButton.click();
     }
 
-    public String getErrorText(){
+    public String getErrorText() {
         return errorTextParagraph.getText();
     }
 }

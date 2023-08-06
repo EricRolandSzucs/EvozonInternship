@@ -17,7 +17,7 @@ public class ProductPage extends BasePage{
     @FindBy(css = "#swatch27")
     private WebElement colorOptionButton;
 
-    @FindBy(css = "#swatch69")
+    @FindBy(css = "#option72")
     private WebElement sizeOptionButton;
 
     @FindBy(css = ".toggle-tabs li.last")
@@ -28,6 +28,9 @@ public class ProductPage extends BasePage{
 
     @FindBy(css = ".rating-links a:last-of-type")
     private WebElement addReviewButton;
+
+    @FindBy(css = ".bottom .btn-checkout")
+    private WebElement checkoutButton;
 
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -62,6 +65,8 @@ public class ProductPage extends BasePage{
     public void clickAddProductReviewButton() {
         addReviewButton.click();
     }
+
+    public void clickCheckoutButton() { checkoutButton.click(); }
 
 
 }

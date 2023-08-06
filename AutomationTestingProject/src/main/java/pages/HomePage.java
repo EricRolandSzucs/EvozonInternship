@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import utils.Constants;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
     @FindBy(css = ".skip-account .label")
     private WebElement accountLink;
@@ -33,7 +33,7 @@ public class HomePage extends BasePage{
     }
 
 
-    public void open(){
+    public void open() {
         driver.get(Constants.BASE_URL);
     }
 
@@ -41,15 +41,15 @@ public class HomePage extends BasePage{
         accountLink.click();
     }
 
-    public void clickLoginLink(){
+    public void clickLoginLink() {
         loginLink.click();
     }
 
-    public void clickRegisterLink(){
+    public void clickRegisterLink() {
         registerLink.click();
     }
 
-    public void clickLogoutLink(){
+    public void clickLogoutLink() {
         logoutLink.click();
     }
 

@@ -22,10 +22,12 @@ public class BaseTest {
     protected CartPage cartPage;
     protected ProductReviewPage reviewPage;
     protected AccountInformationPage accountInformationPage;
+    protected CheckoutPage checkoutPage;
 
     @Before
     public void initDriver() {
         WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         homepage = new HomePage(driver);
@@ -38,6 +40,7 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         reviewPage = new ProductReviewPage(driver);
         accountInformationPage = new AccountInformationPage(driver);
+        checkoutPage = new CheckoutPage(driver);
 
         homepage.open();
     }

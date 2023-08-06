@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductReviewPage extends BasePage{
+public class ProductReviewPage extends BasePage {
 
     @FindBy(css = ".messages span")
     private WebElement successfulReviewParagraph;
 
-    @FindBy(id ="Quality_5")
+    @FindBy(id = "Quality_5")
     private WebElement qualityRadioButton;
 
     @FindBy(id = "Price_5")
@@ -34,11 +34,11 @@ public class ProductReviewPage extends BasePage{
         super(driver);
     }
 
-    public void setQualityRadioButton(){
+    public void setQualityRadioButton() {
         qualityRadioButton.click();
     }
 
-    public void setPriceRadioButton(){
+    public void setPriceRadioButton() {
         priceRadioButton.click();
     }
 

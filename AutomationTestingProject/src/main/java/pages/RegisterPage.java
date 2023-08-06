@@ -5,7 +5,6 @@ import com.github.javafaker.service.RandomService;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.RandomEmailGenerator;
 
 import java.util.Locale;
 

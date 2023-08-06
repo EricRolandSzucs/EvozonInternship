@@ -8,7 +8,7 @@ import org.junit.runners.JUnit4;
 import utils.Constants;
 
 @RunWith(JUnit4.class)
-public class LogoutTest extends BaseTest{
+public class LogoutTest extends BaseTest {
 
     @Before
     public void beforeTestLogin() {

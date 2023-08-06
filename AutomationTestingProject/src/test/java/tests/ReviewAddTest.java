@@ -1,22 +1,29 @@
 package tests;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import utils.Constants;
 
 @RunWith(JUnit4.class)
-public class ReviewAddTest extends BaseTest{
+public class ReviewAddTest extends BaseTest {
+
+    @Before
+    public void navigateToProduct() {
+        homepage.setSearchField(Constants.CONFIGURABLE_PRODUCT);
+        homepage.submitSearchField();
+    }
 
     @Test
     public void validReviewTest() {
-        homepage.clickProductPageLink();
+        productGridPage.clickConfigurableProductPageLink();
         productPage.clickProductReviewTabButton();
 
-        if(productPage.checkReviewExistence()) {
+        if (productPage.checkReviewExistence()) {
             productPage.clickAddFirstProductReviewButton();
-        }
-        else
+        } else
             productPage.clickAddProductReviewButton();
 
         reviewPage.setPriceRadioButton();

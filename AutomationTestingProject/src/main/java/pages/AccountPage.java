@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountPage extends BasePage{
+public class AccountPage extends BasePage {
 
     @FindBy(css = ".hello strong")
     private WebElement welcomeTextParagraph;
@@ -19,11 +19,11 @@ public class AccountPage extends BasePage{
         super(driver);
     }
 
-    public String getWelcomeText(){
+    public String getWelcomeText() {
         return welcomeTextParagraph.getText();
     }
 
-    public String getLogoutText(){
+    public String getLogoutText() {
         return logoutTextParagraph.getText();
     }
 

@@ -30,11 +30,11 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
-    public String getProductAddedText(){
+    public String getProductAddedText() {
         return productAddedParagraph.getText();
     }
 
-    public void setCouponCodeField(String couponCode){
+    public void setCouponCodeField(String couponCode) {
         couponCodeField.sendKeys(couponCode);
     }
 
@@ -52,14 +52,14 @@ public class CartPage extends BasePage {
 
     public double calculateTotalOfProductInCart() {
         double total = 0;
-        for(WebElement price: productsInCart) {
-            total = total + Double.parseDouble(price.getText().substring(1));
+        for (WebElement price : productsInCart) {
+            total = total + Double.parseDouble(price.getText().replaceAll("[^0-9.]", ""));
         }
         return total;
     }
 
     public double getCartTotalText() {
-        return Double.parseDouble(cartTotalParagraph.getText().substring(1));
+        return Double.parseDouble(cartTotalParagraph.getText().replaceAll("[^0-9.]", ""));
     }
 
 }

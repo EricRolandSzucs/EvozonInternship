@@ -1,15 +1,11 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import utils.Constants;
 
 @RunWith(JUnit4.class)
@@ -25,7 +21,7 @@ public class PasswordChangeTest extends BaseTest {
     }
 
     @Test
-    public void validPasswordChangeTest(){
+    public void validPasswordChangeTest() {
         accountPage.clickChangePasswordLink();
 
         accountInformationPage.setCurrentPasswordField(Constants.USER_PASSWORD);
@@ -48,7 +44,7 @@ public class PasswordChangeTest extends BaseTest {
     }
 
     @After
-    public void afterTestMethod() {
+    public void afterTestPasswordChange() {
         accountPage.clickChangePasswordLink();
 
         accountInformationPage.setCurrentPasswordField("parola124");

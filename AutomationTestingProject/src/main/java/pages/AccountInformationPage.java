@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountInformationPage extends BasePage{
+public class AccountInformationPage extends BasePage {
 
-    @FindBy(id ="current_password")
+    @FindBy(id = "current_password")
     private WebElement currentPasswordField;
 
     @FindBy(id = "password")
@@ -23,15 +23,17 @@ public class AccountInformationPage extends BasePage{
         super(driver);
     }
 
-    public void setCurrentPasswordField(String currentPassword){
+    public void setCurrentPasswordField(String currentPassword) {
         currentPasswordField.sendKeys(currentPassword);
     }
 
-    public void setPasswordField(String password){
+    public void setPasswordField(String password) {
         passwordField.sendKeys(password);
     }
 
-    public void setConfirmationField(String confirmation) { confirmationField.sendKeys(confirmation);}
+    public void setConfirmationField(String confirmation) {
+        confirmationField.sendKeys(confirmation);
+    }
 
     public void clickPasswordChangeButton() {
         passwordChangeButton.click();

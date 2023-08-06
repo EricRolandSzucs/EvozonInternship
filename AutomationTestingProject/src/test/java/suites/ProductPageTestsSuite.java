@@ -6,7 +6,7 @@ import tests.ReviewAddTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    ReviewAddTest.class
+        ReviewAddTest.class
 })
 public class ProductPageTestsSuite {
 }
