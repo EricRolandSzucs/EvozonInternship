@@ -1,43 +1,38 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(JUnit4.class)
-public class SortByTest {
-
-    WebDriver driver;
+public class SortByTest extends BaseTest {
 
     @Before
-    public void beforeTestMethod() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://qa1magento.dev.evozon.com/");
+    public void beforeSortingNavigation() {
+        homepage.clickVipCategoryLink();
     }
 
     @Test
-    public void validSortByTest() {
-        driver.findElement(By.cssSelector("li.nav-6")).click();
-
-        driver.findElement(By.cssSelector("dd.odd:first-of-type ol li:first-of-type a")).click();
-
-        int productNumber = driver.findElements(By.cssSelector("div.category-products > ul")).size();
-
-        Assert.assertTrue(productNumber > 0);
+    public void validSortByPriceAscendingTest() {
+        productGridPage.clickSortByPriceOption();
+        Assert.assertTrue(productGridPage.priceOfProductsIsAscending());
     }
 
-    @After
-    public void afterTestMethod() {
-        driver.close();
+    @Test
+    public void validSortByPriceDescendingTest() {
+        productGridPage.clickSortByPriceOption();
+        productGridPage.clickSortByDirectionButton();
+        Assert.assertTrue(productGridPage.priceOfProductsIsDescending());
     }
+
+    @Test
+    public void validSortByLeftPanelTest() {
+        productGridPage.setFilteringOptionButton();
+
+        Assert.assertTrue(productGridPage.countProductNumberInList() > 0);
+    }
+
 
 }

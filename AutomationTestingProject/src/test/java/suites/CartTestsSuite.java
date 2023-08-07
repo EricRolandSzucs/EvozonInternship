@@ -1,14 +1,14 @@
+package suites;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import tests.AddToCartConfigurableProductTest;
-import tests.AddToCartSimpleProductTest;
+import tests.AddToCartTest;
 import tests.ApplyCouponTest;
 import tests.TotalPriceTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        AddToCartSimpleProductTest.class,
-        AddToCartConfigurableProductTest.class,
+        AddToCartTest.class,
         ApplyCouponTest.class,
         TotalPriceTest.class
 
